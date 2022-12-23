@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\lazarus\fpc\3.2.0\bin\x86_64-win64\fpc.exe" Date="1357350767"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -WG -l -vewnhibq &quot;-FiC:\Users\днс\Desktop\Events10.04\WSDM_8pages 27 Feb-3 Mar, 2023\Digital Twin and Intelligent Assistant\lib\x86_64-win64&quot; -FuC:\lazarus\lcl\units\x86_64-win64\win32 -FuC:\lazarus\lcl\units\x86_64-win64 -FuC:\lazarus\components\lazutils\lib\x86_64-win64 -FuC:\lazarus\packager\units\x86_64-win64 &quot;-FuC:\Users\днс\Desktop\Events10.04\WSDM_8pages 27 Feb-3 Mar, 2023\Digital Twin and Intelligent Assistant\&quot; &quot;-FUC:\Users\днс\Desktop\Events10.04\WSDM_8pages 27 Feb-3 Mar, 2023\Digital Twin and Intelligent Assistant\lib\x86_64-win64\&quot; &quot;-FEC:\Users\днс\Desktop\Events10.04\WSDM_8pages 27 Feb-3 Mar, 2023\Digital Twin and Intelligent Assistant\&quot; &quot;-oC:\Users\днс\Desktop\Events10.04\WSDM_8pages 27 Feb-3 Mar, 2023\Digital Twin and Intelligent Assistant\dtIA.exe&quot; -dLCL -dLCLwin32 dtIA.lpr"/>
+</CONFIG>
