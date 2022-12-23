@@ -1,0 +1,9 @@
+enter "make help" for help:
+(make         - build library
+ make clean   - delete *.ppu, *.o
+ make install - install units
+)
+ 
+Системные требования:
+ FPC (FreePascal Compiler) v1.0.10 (на других версиях не проверял)
+ Модуль Objects.PPU (updatedb; locate objects.ppu)
