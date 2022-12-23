@@ -1,0 +1,1 @@
+fpc -Og -Fu/home/alexey/rss2fido/skmhl/sources/ -Fu/home/alexey/rss2fido/pro_unit/ -Fu/home/alexey/rss2fido/synapse/source/lib/ -Fi/home/alexey/rss2fido/inc/ -Fi/home/alexey/rss2fido/info/ -Fi/home/alexey/rss2fido/copyright/ /home/alexey/rss2fido/rss2fido.pas

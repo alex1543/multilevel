@@ -1,0 +1,8 @@
+
+  This the program utf2dos based on source rss2fido.
+    Alexey Subbotin
+
+  Site: http://rss2fido.sourceforge.net
+  Download: http://sourceforge.net/projects/rss2fido
+
+
