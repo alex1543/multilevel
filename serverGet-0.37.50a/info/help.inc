@@ -1,0 +1,18 @@
+  WriteLn;
+  WriteLn(' format commands: [-commands] [variable]');
+  WriteLn(' The following commands:');
+  WriteLn;
+  WriteLn(' -n - task Name;');
+  WriteLn(' -a - address RSS;');
+  WriteLn(' -o - message from the RSS formed programme;');
+  WriteLn(' -t - template which will be a message;');
+  WriteLn(' -l - language file;');
+  WriteLn('      and other commands.');
+  WriteLn;
+  WriteLn(' You can use any variable from the configuration file');
+  WriteLn('------------------------------------------------------');
+  WriteLn(' Standard examples:');
+  WriteLn(' rss2fido [address_RSS]');
+  WriteLn(' rss2fido -c [configuration_file]');
+  WriteLn(' (just see _example[XXX].bat)');
+  WriteLn;
