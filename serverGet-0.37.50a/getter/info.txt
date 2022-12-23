@@ -1,0 +1,33 @@
+
+  RSS to FidoNet rss2fido 
+  The program is designed to track new items RSS
+  and forming specially messages to FidoNet.
+
+  Advantages over other programs and scripts:
+  1) custom template future messages;
+  2) Support for multiple code pages;
+  3) Four run of the program:
+  a) without parameters,
+  b) showing only address RSS,
+  c) indicating parametres in command line using keys
+  (for details see "rss2fido --help"),
+  g) Working with configuration file
+  (which is the key "rss2fido -c [path_config_file]").
+  4) fast working by processing data in RAM;
+  5) customizable language file, which allows you to:
+  a) support many languages;
+  b) use macros to customize colors, appearance, launching applications,
+  correct file stories, and more.
+  6) custom config file allows you to:
+  a) unlimited addresses RSS;
+  b) has many options.
+  7) Three result of the program:
+  a) create message to file;
+  b) posting messages in a mailbox: squish, jam, msg;
+  c) create package (pkt).
+  8) Create a file in UUE.
+  9) The possibility of sending files in Bink Style Outbound.
+  10) Built macro language.
+  11) The possibility of keeping track of new messages.
+  12) template file you can record a message in the out file,
+  as you have fantation. :)

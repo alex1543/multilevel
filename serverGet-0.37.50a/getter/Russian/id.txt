@@ -1,0 +1,20 @@
+  
+  Название программы: rss2fido by_Rain 27/09-2006g.
+  Начало разработки: 27 сентября 2006г.
+  Автор: Alexey Subbotin, by_Rain (C) 2006-2007.
+  Для связи:
+  	- mailto: AlexeySubbotin[yap]mail.ru
+  	- and other: 2:5030/1543@fidonet
+  -------------------------------------------------
+  Сайт программы:
+  http://killfix.narod.ru/index.html#rss2fido
+  (ссылка #rss2fido в начале страницы)
+  Доступны все версии программы
+  
+  Новый сайт программы: http://rss2fido.sourceforge.net
+  Cкачать можно отсюда: http://sourceforge.net/projects/rss2fido
+  
+      Программа бесплатна (freeware)  2007г.
+  -------------------------------------------------
+
+  

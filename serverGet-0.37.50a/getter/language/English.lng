@@ -1,0 +1,707 @@
+; [it is an example of language file program the rss2fido]
+;
+; Description about lng file
+; Format:
+;
+; [ID]
+;   ...
+; message
+; (action or screen)
+;
+;   ...
+; [end]
+;
+; Before you run the rss2fido close the file
+;
+
+
+; Macros: @delay: XXX
+;---------------------------- (language file only)
+; This parameter indicates the time delay implementation of the programme
+; Format: [ID]: Time in seconds
+; During the delay can be used [Enter] for the continuation
+; of the program and the [Esc] to exit
+; Available @ macro key indefinitely is pressing any key
+; (use for debugging; Use, if needed)
+; in the new version [Enter] with a space, and "y"
+; [Esc] meets "n"
+;
+; Macros: @beep: XXX,XXX
+;---------------------------- (language file only)
+; Horn
+; Format: [ID]: sound_frequency, duration
+;
+; Macros: @file: file.log
+;---------------------------- (language file only)
+; This option allows you to write a string to a file.
+; Earmarked for customized log file.
+; Format: [ID]: filename the_string_to_record
+;
+; Macros: @logtime
+;----------------------------
+; Earmarked for writing to the file date and time format DD-Mon-GGGG HH:MM:SS
+; or the display
+;
+; Also there is a group of macros date and time:
+; @hour, @minute, @second, @year, @mounth, @day, @week
+;
+; Macros: @cycle
+;----------------------------
+; Number of newsticker
+;
+; Macros: @number
+;----------------------------
+; With Config file: number of RSS feeds
+;
+; Macros: @clear
+;---------------------------- (language file only)
+; Clear screen
+;
+; Macros: @program
+;----------------------------
+; Program Name
+;
+; Macros: @version
+;----------------------------
+; Program Version
+;
+; Macros: @assembly
+;----------------------------
+; Date and time of the program
+;
+; Macros: @home
+;----------------------------
+; Provides current working directory with the program
+;
+; Macros: @goto: XXX,XXX
+;---------------------------- (language file only)
+; Move cursor
+; Format: [ID]: X,Y
+;
+; Macros: @line: XXX, XXXXXXXXXXXXXXXXXXXXX
+;---------------------------- (language file only)
+; Get line on the screen
+; Format: [ID]: Inner Line
+; This one line, the @line is not necessary
+;
+; Macros: @level: XXX
+;---------------------------- (language file only)
+; The exit when called for
+;
+; Macros: @color: XX,XX
+;---------------------------- (language file only)
+; Painting
+; The first argument change the color of text,
+; the second argument is changing the background color
+; Format: [ID]: text_color, background_color
+;
+; Macros: @exec: XXXXXXXXXXXXXXXXXXXXXXXXX
+;---------------------------- (language file only)
+; Run external program commandny file
+; Format: [ID]: path_in_program
+;
+; Macros: @exit
+;---------------------------- (language file only)
+; Exit Program
+;
+; Macros: @error: XXX
+;---------------------------- (language file only)
+; Instantly exit without warning code completion
+; Format: [ID]: error_level
+;
+; Macros: @multi
+;----------------------------
+; Provides two values:
+; TRUE if work with the configuration file and
+; FALSE if the program works without Config
+;
+; Macros: @read: XXXXXXXXXXXXXXXXXXXXXXXXX
+;---------------------------- (language file only)
+; Assign value macros or variable from configure file
+; Format: [ID]: value
+; Length lines or macros @read: can be set
+; using macros @length: [long]
+; Default long lines @read: equal to 60 marks
+;
+; Macros: @window: XXXXXXXXXXXXXXXXXXXXXXXXX
+;---------------------------- (language file only)
+; Ask title window
+; Format: [ID]: value
+;
+; Macros: @br
+;----------------------------
+; Long lines Enter an empty string
+;
+; Macros: @view: XXXXXXXXXXXXXXXXXXXXXXXXX
+;---------------------------- (language file only)
+; Show the contents of the file on the screen
+; Format: [ID]: filename
+;
+; Macroses: @help, @info, @copyright
+;---------------------------- (language file only)
+; Also, the same as rss2fido rss2fido --help,
+; --info, --copyright - intermediate.
+
+; -------------------------------------------------------------
+; Please note that all of these macros re not
+
+;
+; Macros: @address
+;----------------------------
+; Addess RSS indicated as a single parameter to the programme
+; (does not matter : Without Config. file or Config. file)
+;
+; The same all variables from the config file,
+; conversion in macros
+; For example, the address (address current tape) is a @address
+; Tea macros are available not only in the Config. file
+;
+; Just a local macros, which have formed
+; in the program, and depending on the settings
+; connected to configure files.
+
+; The Config file are variables that language file
+; macros are: out, exec, sender, delete, create, view
+; To macro do the following:
+; @[argument]: filename
+; example: @view: help.txt
+; is the effect @view,
+; but the value of config does not change.
+; If it is necessary to fulfil all the variable config,
+; Make it so: @variable_all
+; example: @view_all
+; will be implemented all the actions assigned to a variable
+; config view in the current group
+; In addition, there are macros @send_path_all,
+; adding all messages minded
+; by @send_path
+;
+; The sequence of the action:
+; out_all, send_all, send_path_all, create_all,
+; exec_all, view_all, delete_all
+; Naturally, you can change the way of through
+; language files, sking variables independently
+;
+; Enter at the end of macro "#" and the priority will be
+; has only when something well
+;
+; If a macros redouble For example: @@address,
+; the macros is executed
+;
+; -------------------------------------------------------------
+;  The reserved Action
+; -------------------------------------------------------------
+
+[start]
+; This page is displayed when the program is started
+ @file: rss2fido.log @logtime Starting the program
+ @file: rss2fido.log @logtime assembly Date: @assembly,
+ @file: rss2fido.log @logtime version: @version
+; The greetings
+
+                                                       @version
+
+  @window: The @program the date of the assembly on @assembly @version
+  @beep: 440,600
+  @color: 15, 10
+  @clear
+
+-------------------------
+Test translation of language file.
+-------------------------
+
+ The following parameters:
+ ------------------------------------------------------------
+ Address RSS: @address
+
+ Brief description
+ After every 50 minutes to download RSS feeds,
+ and then found new allegations
+ text will be removed and transferred to Unicode,
+ processed according to a pattern
+ created out of the settings.
+ (default: [directory with the program]CP866_out.txt)
+ If the tape want to check more often than every 50 minutes,
+ the correct macros "@delay:" in the language file. 
+ ID: [unit] and [multi].
+
+ Press [Enter], or wait 25 seconds.
+ @delay: 25
+
+[end]
+
+[enter]
+; This window appears when the program is started
+; @window: @program > Starting the program
+ @color: 15, 9
+ @clear
+ @goto: 1,3
+  +--------- --- -- -  -   -     -
+  | RSS address: 
+  +----------------- ---- --- --  -   -    -     -
+ @length: 62
+ @goto: 18,4
+ @read: @address
+
+ @color: 15, 13
+ @clear
+ @goto: 1,3
+  +--------- --- -- -  -   -     -
+  | file out: 
+  +----------------- ---- --- --  -   -    -     -
+ @length: 65
+ @goto: 15,4
+ @read: @out
+
+
+
+[end]
+
+[config]
+; The screen shows that the work is through Config
+; @window: @program > read Config
+  @clear
+
+;subprog: loading configure files
+(multi = @multi)
+;path: @cfg
+[end]
+
+[string]
+; This screen is displayed when booting from the command line
+;string loaded
+; out file: @out
+;@key
+[end]
+
+[ERROR_RSS]
+; This message appears when no mandatory
+; parameter to the -- to RSS feeds
+ @color: 15, 12
+ @clear
+ @goto: 1,2
+
+  Address: @address
+ ------------------------------------------------------------
+  No listed or is not properly addressed to RSS feeds,
+  as the only parameter to the @program
+  Example: d:\fido\rss2fido.exe http://news.yandex.ru/world.rss
+
+  going out ....................
+
+ @file: rss2fido.log @logtime Empty the tape
+ @delay: 5
+ @level: 201
+
+ @color: 8, 0
+ @clear
+[end]
+
+[error_template]
+; This list shows where vozmodno find no template
+;
+ @color: 15, 12
+ @clear
+
+ Lay 1, any template in the directory with the rss2fido.
+ Programme will be processed first on the name of the template
+ with the expansion tpl. Without the template will not work.
+
+ @file: rss2fido.log @logtime A template for RSS feeds
+ @level: 202
+
+ @color: 8, 0
+ @clear
+[end]
+
+
+[error_url]
+; This list shows when temporarily lost Internet connection
+; or missing file on the server
+ @color: 15, 12
+ @clear
+
+ RSS News not because of the loss of Internet
+ connection or not available on the server.
+ ------------------------------------------------------------
+ Address RSS: @address
+
+ @file: rss2fido.log @logtime Temporarily lost Internet connections
+ @delay: 25
+[end]
+
+[error_item]
+; This list shows if tape is not a single message
+ @color: 15, 12
+ @clear
+
+  @address
+ ------------------------------------------------------------
+ Check what you are downloading.
+ The RSS flow is <@item> tag, and hence no news.
+
+ @file: rss2fido.log @logtime The RSS flow apparent news
+ @delay: 25
+
+[end]
+
+[error_cfg]
+; This list shows, if not found Config.
+; you put the "c" to the programme 
+
+The specified path to the config file: @cfg
+The config file is not found
+ @level: 203
+[end]
+
+[master]
+ @color: 15, 10
+ @clear
+
+  Dowloading, wait ...
+
+[end]
+
+[size]
+; This message is displayed, if not a new message
+;
+;
+  @clear
+
+  New messages found
+  Date of last entry: @writetime
+; @writetime date of the last entry in the *. dtb file
+  @delay: 3
+[end]
+
+[error_open]
+; If we can not open file
+
+Error open: @open
+; Local macros: @open
+;----------------------------
+; File, which is not possible to open
+
+ @level: 204
+[end]
+
+[error_exist]
+; Åסכט םוע פאיכא
+
+ Íוע פאיכא: @exist
+; Local macros: @exist
+;----------------------------
+; File, which is not possible to find
+
+ @key
+
+[end]
+
+[error_path]
+; If the wrong path
+
+  Asked the wrong path: @path
+; Local macros: @path
+;----------------------------
+; Way, which is set incorrectly
+
+[end]
+
+[msgbase]
+
+ @clear
+
+  The message was sent successfully domestic sender
+ ---------------------------------------------------
+  Name your base: @send_path (msg: @msg)
+; Local macros: @msg
+;----------------------------
+; The number of messages in the mail
+;
+  Format: @send_format
+
+  Name letter: @send_from
+  Who sent: @send_to
+  Subj: @send_subj
+
+ @delay: 5
+[end]
+
+[pkt]
+
+ @clear
+
+  Message has formed format pkt
+ ---------------------------------------------------
+  Name: @pkt
+  Total postal packages: @msg רע.
+; Local macros: @pkt
+;----------------------------
+; The full name of the package
+
+ @delay: 5
+[end]
+
+[error_address]
+
+  It changed the:
+  from: @send_faddress
+  to: @send_taddress
+ @code : 205
+[end]
+
+[error_msgbase]
+; This screen is displayed until the postal facilities
+; are to be opened and written communication formed the program 
+
+
+  It will open the mail
+  @send_path
+
+  Redo to five seconds.
+
+  @delay: 5
+[end]
+
+[error_format]
+
+  Error mission of the postal @send_format
+ @level: 206
+[end]
+
+[unit]
+; The waiting for the next cycle (injection, validation, etc)
+;
+ @color: 15, 9
+ @clear
+
+  Next injection and verification letny going to be in 3000 sec. (50 min)
+  Press [Enter] to the forced tapes
+  Press [Esc] to exit
+
+
+
+  I know you that ...
+  ... what can be run program using nnCron
+  without the display and the appearance of the console windows?
+
+  Create it along the following lines:
+
+                #( rss2fido
+                Time: START-TIME
+                Action:
+                    SWHide
+                    START-APP: d:\fido\rss2fido.bat
+                )#
+ @delay: 3000
+[end]
+
+[multi]
+; This page is displayed instead of the window waiting,
+; and only if you are working with the program through the Config file
+
+ @color: 15, 9
+ @clear
+
+  Multi treatment program
+ ------------------------------------------------------------
+  Next injection and verification letny going to be in 300 seconds. (5 min)
+  Press [Enter] to the forced tapes
+  Press [Esc] to exit
+
+  Current options:
+ ---------------------------------
+  Name: @name
+  Address RSS: @address
+  Template: @template
+  Language file: @language
+  Out file: @out
+;  Send file: @sender
+
+  It cycles: @cycle רע.
+  The tapes: @number.
+
+ @delay: 300
+[end]
+
+[delay]
+; The screen displayed in the macros @delay: XXX, XXX
+;Press [Enter] to continue ...
+; Here makos @delay is not working
+[end]
+
+[key]
+; The screen displayed in the macros @key
+Press any key to continue ...
+; Here makos @key is not working
+[end]
+
+[code]
+; The message will be displayed on the screen once the codepage
+Address RSS: @address
+Described code page @code RSS
+; Local macros: @code
+;----------------------------
+; Name some (or a =)) codepage RSS
+; Use the@ code only here because it is in the process of the program
+;
+ @file: rss2fido.log @logtime RSS tape @code encoding
+[end]
+
+[news]
+; This page is the beginning of a message from RSS feeds
+Start news!
+Total Posts: @q_item, will be added: @q_news
+; Local macros: @q_item
+;----------------------------
+; Total communications RSS news bulletin
+;
+; Local macros: @q_news
+;----------------------------
+; Add new messages in the program
+;
+;
+[end]
+
+[news_add]
+; This message appears if found at least one important sign in the template
+News @news append (var. @mode_news)
+; Local macros: @news
+;----------------------------
+; The added value to be defined in the template files
+; and found in the RSS news feeds
+;
+; Local macros: @mode_news
+;----------------------------
+; Move to the next line, not to transfer
+; or simply cutting see template files
+;
+[end]
+
+[error_news]
+; If the value is not found
+The "@news" is not found
+ @file: rss2fido.log @logtime The "@news" is not found
+ @delay: 5
+[end]
+
+[macros]
+; Exit on macrosu @exit (it is the macro is not)
+ @color: 15, 4
+ @clear
+
+  ThE MacRoS ExiT.
+ @goto: 0, 20
+ @delay: 2
+ @clear
+[end]
+
+[file]
+; This message appears if found file box or next.ok exit.ok
+
+Found box @file
+ @file: rss2fido.log @logtime Found box @file @br
+; Local macros: @file
+;----------------------------
+; The results mark
+
+ @level: 207
+[end]
+
+[error_exit]
+; This message comes up when the program concluded with a mistake
+; @color: 15, 12
+; @clear
+;
+ @file: rss2fido.log @logtime The program concluded with a mistake @br
+ @level: 10
+[end]
+
+[exit]
+; This message appears at the conclusion of the program
+ @color: 15, 0
+ @clear
+ @file: rss2fido.log @logtime The program completed @br
+; The program completed
+ @level: 0
+[end]
+
+; -------------------------------------------------------------
+;  The Action Keyboard
+; -------------------------------------------------------------
+; Also at each key can be put to
+; Example for keys "Q":
+[key#Q]
+; If you press the "Q", it is executed sdedutee effects:
+Whazzup.
+; The display shows the word "Whazzup."
+@key
+; then expected to press
+[end]
+; Also available keys F1-F12
+; Example:
+[key#F1]
+ @color: 7, 0
+ @clear
+ @help
+; @info
+; @view: additional\help_rus.txt
+ @key
+
+[end]
+[key#F12]
+; Example for F12:
+ @color: 7, 0
+ @clear
+ @info
+ @key
+[end]
+
+[key#i]
+ @color: 7, 0
+ @clear
+ @info
+ @key
+[end]
+
+[key#h]
+ @color: 7, 0
+ @clear
+ @help
+ @key
+[end]
+
+[key#?]
+ @color: 7, 0
+ @clear
+ @help
+ @key
+[end]
+
+[key#c]
+ @color: 7, 0
+ @clear
+ @copyright
+ @key
+[end]
+
+[key#F2]
+ @color: 7, 0
+ @clear
+
+
+
+ @exec: d:\GoldEd\GoldEd#1.bat
+
+[end]
+
+[key#F3]
+ @color: 7, 0
+ @clear
+
+
+
+ @exec: D:\FAR\FAR.EXE
+
+[end]
+

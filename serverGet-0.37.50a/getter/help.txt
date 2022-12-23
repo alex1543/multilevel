@@ -1,0 +1,18 @@
+
+ format commands: [-commands] [variable]
+ The following commands:
+
+ -n - task Name;
+ -a - address RSS;
+ -o - message from the RSS formed programme;
+ -t - template which will be a message;
+ -l - language file;
+      and other commands.
+
+ You can use any variable from the configuration file
+------------------------------------------------------
+ Standard examples:
+ rss2fido [address_RSS]
+ rss2fido -c [configuration_file]
+ (just see _example[XXX].bat)
+

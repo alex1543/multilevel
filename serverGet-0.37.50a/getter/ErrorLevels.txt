@@ -1,0 +1,38 @@
+
+  Codes completion of the programme (errorlevels) rss2fido
+  default in the language file.
+----------------------------------------------------
+
+  0   : Normal completion of the program
+        (teg [exit])
+  10  : The completion of the error
+        (teg [error_exit])
+  201 : The RSS address is bad or empty
+        (teg [error_rss])
+  202 : Empty template file
+        (teg [error_template])
+  203 : Incorrect (or without) config file
+        (teg [error_cfg])
+  204 : Unable to open file
+        (teg [error_open])
+  205 : Invalid the fidonet address XXX:XXX/XXX.XXX
+        (teg [error_address])
+  206 : Error mission of the mailbox
+        (teg [error_format])
+  207 : Withdrawal of the box
+        (teg [file])
+
+  Invariant code completion
+  of the programme rss2fido in the language file
+----------------------------------------------------
+
+  2   : Launched another copy of the programme
+        (It does not change)
+  3   : Exit after the "--help" or "--info"
+        (It does not change)
+  11  : Unable to find the language file
+        (It does not change)
+  12  : Unable to open the language file
+        (It does not change)
+
+

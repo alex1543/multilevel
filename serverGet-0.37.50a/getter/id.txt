@@ -1,0 +1,17 @@
+  
+  Program Name: rss2fido by_Rain 27/09-2006g.
+  Date of 27 september 2006 year.
+  Author: Alexey Subbotin, by_Rain (C) 2006-2007
+  Contact:
+  	- mailto: AlexeySubbotin[yap]mail.ru
+  	- and other: 2:5030/1543@fidonet
+  -------------------------------------------------
+  
+  Site the program: http://rss2fido.sourceforge.net
+  Download files, the sources:
+     http://sourceforge.net/projects/rss2fido
+  
+      The program is free (freeware)
+  -------------------------------------------------
+				  2007 year.
+  
